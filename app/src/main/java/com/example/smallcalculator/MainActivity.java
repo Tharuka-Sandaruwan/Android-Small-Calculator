@@ -63,6 +63,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button mulBtn
+        Button mulBtn = (Button) findViewById(R.id.mulBtn);
+        mulBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(num1.getText().toString().equals("") || num2.getText().toString().equals("")){
+                    results.setText("0");
+                }
+                else{
+                    int no1= Integer.parseInt(num1.getText().toString());
+                    int no2= Integer.parseInt(num2.getText().toString());
+                    results.setText(String.valueOf(no1*no2));
+                }
+            }
+        });
+
+        Button divBtn = (Button) findViewById(R.id.divBtn);
+        divBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(num1.getText().toString().equals("") || num2.getText().toString().equals("")){
+                    results.setText("0");
+                }
+                else{
+                    int no1= Integer.parseInt(num1.getText().toString());
+                    int no2= Integer.parseInt(num2.getText().toString());
+                    results.setText(String.valueOf(no1*no2));
+                }
+            }
+        });
     }
 }

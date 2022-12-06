@@ -26,10 +26,21 @@ public class MainActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Integer.parseInt(num1.getText())+Integer.parseInt(num2.getText())
-                int no1= Integer.parseInt(num1.getText().toString());
-                int no2= Integer.parseInt(num2.getText().toString());
-                results.setText(String.valueOf(no1+no2));
+
+
+                if(num1.getText().toString().equals("") && num2.getText().toString().equals("")){
+                    results.setText("0");
+                }else if(num1.getText().toString().equals("")){
+                    results.setText(num2.getText().toString());
+                }else if(num2.getText().toString().equals("")){
+                    results.setText(num1.getText().toString());
+                }
+                else{
+                    int no1= Integer.parseInt(num1.getText().toString());
+                    int no2= Integer.parseInt(num2.getText().toString());
+                    results.setText(String.valueOf(no1+no2));
+                }
+
             }
         });
     }

@@ -82,13 +82,19 @@ public class MainActivity extends AppCompatActivity {
         divBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(num1.getText().toString().equals("") || num2.getText().toString().equals("")){
+                if(num1.getText().toString().equals("") && num2.getText().toString().equals("")){
                     results.setText("0");
+                }
+                else if(num1.getText().toString().equals("")){
+                    results.setText("0");
+                }
+                else if(num2.getText().toString().equals("") || Integer.parseInt(num2.getText().toString()) == 0){
+                    results.setText("Cannot Divide By Zero");
                 }
                 else{
                     int no1= Integer.parseInt(num1.getText().toString());
                     int no2= Integer.parseInt(num2.getText().toString());
-                    results.setText(String.valueOf(no1*no2));
+                    results.setText(String.valueOf(no1/no2));
                 }
             }
         });
